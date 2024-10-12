@@ -1,0 +1,14 @@
+/home/blacky/Documents/Etudes/Bac/2_ieme/Progra/C#/Exo_second_2/banque/bin/Debug/net8.0/banque
+/home/blacky/Documents/Etudes/Bac/2_ieme/Progra/C#/Exo_second_2/banque/bin/Debug/net8.0/banque.deps.json
+/home/blacky/Documents/Etudes/Bac/2_ieme/Progra/C#/Exo_second_2/banque/bin/Debug/net8.0/banque.runtimeconfig.json
+/home/blacky/Documents/Etudes/Bac/2_ieme/Progra/C#/Exo_second_2/banque/bin/Debug/net8.0/banque.dll
+/home/blacky/Documents/Etudes/Bac/2_ieme/Progra/C#/Exo_second_2/banque/bin/Debug/net8.0/banque.pdb
+/home/blacky/Documents/Etudes/Bac/2_ieme/Progra/C#/Exo_second_2/banque/obj/Debug/net8.0/banque.GeneratedMSBuildEditorConfig.editorconfig
+/home/blacky/Documents/Etudes/Bac/2_ieme/Progra/C#/Exo_second_2/banque/obj/Debug/net8.0/banque.AssemblyInfoInputs.cache
+/home/blacky/Documents/Etudes/Bac/2_ieme/Progra/C#/Exo_second_2/banque/obj/Debug/net8.0/banque.AssemblyInfo.cs
+/home/blacky/Documents/Etudes/Bac/2_ieme/Progra/C#/Exo_second_2/banque/obj/Debug/net8.0/banque.csproj.CoreCompileInputs.cache
+/home/blacky/Documents/Etudes/Bac/2_ieme/Progra/C#/Exo_second_2/banque/obj/Debug/net8.0/banque.dll
+/home/blacky/Documents/Etudes/Bac/2_ieme/Progra/C#/Exo_second_2/banque/obj/Debug/net8.0/refint/banque.dll
+/home/blacky/Documents/Etudes/Bac/2_ieme/Progra/C#/Exo_second_2/banque/obj/Debug/net8.0/banque.pdb
+/home/blacky/Documents/Etudes/Bac/2_ieme/Progra/C#/Exo_second_2/banque/obj/Debug/net8.0/banque.genruntimeconfig.cache
+/home/blacky/Documents/Etudes/Bac/2_ieme/Progra/C#/Exo_second_2/banque/obj/Debug/net8.0/ref/banque.dll
