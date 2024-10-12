@@ -12,3 +12,4 @@
 /home/blacky/Documents/Etudes/Bac/2_ieme/Progra/C#/Exo_second_2/banque/obj/Debug/net8.0/banque.pdb
 /home/blacky/Documents/Etudes/Bac/2_ieme/Progra/C#/Exo_second_2/banque/obj/Debug/net8.0/banque.genruntimeconfig.cache
 /home/blacky/Documents/Etudes/Bac/2_ieme/Progra/C#/Exo_second_2/banque/obj/Debug/net8.0/ref/banque.dll
+/home/blacky/Documents/Etudes/Bac/2_ieme/Progra/C#/Exo_second_2/banque/obj/Debug/net8.0/banque.sourcelink.json
