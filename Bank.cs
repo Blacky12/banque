@@ -1,9 +1,9 @@
 class Bank
 {
-    Dictionary<string,CurrentAccount> Accounts {get;} = new Dictionary<string,CurrentAccount>();
+    Dictionary<string,IBankAccount> Accounts {get;} = new Dictionary<string,IBankAccount>();
     public string Name{get; set;}
 
-    public void AddAccount(CurrentAccount account)
+    public void AddAccount(IBankAccount account)
     {
         Accounts.Add(account.Number, account);
     }
@@ -24,10 +24,15 @@ class Bank
         {
             if (account.Owner == person)
             {
-                totalBalance += account.CreditLine;
+                totalBalance += account.Balance;
             }
         }
 
         return totalBalance;
+    }
+
+    public List<IBankAccount> GetAllAccounts()
+    {
+        return Accounts.Values.ToList();
     }
 }

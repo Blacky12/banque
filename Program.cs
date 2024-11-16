@@ -20,7 +20,7 @@ class Program
         IBankAccount account3 = new CurrentAccount("3", 200.0, 1000.0, person2);
 
         // Test des fonctionnalités du compte
-        account1.Deposit(100); // Dépôt
+        account1.Deposit(50); // Dépôt
         account1.Withdraw(50); // Retrait
         account1.ApplyInterest(); // Application des intérêts
 
@@ -29,11 +29,11 @@ class Program
         Console.WriteLine($"Propriétaire du compte: {account1.Owner}");
 
         // (Optionnel) Gestion des comptes via la banque
-        // var maBanque = new Bank() { Name = "Ifosup" };
-        // maBanque.AddAccount(account1);
-        // maBanque.AddAccount(account2);
-        // maBanque.AddAccount(account3);
+        var maBanque = new Bank() { Name = "Ifosup" };
+        maBanque.AddAccount(account1);
+        maBanque.AddAccount(account2);
+        maBanque.AddAccount(account3);
 
-        // Console.WriteLine($"Nombre total de comptes dans la banque ");
+        Console.WriteLine($"Nombre total de comptes dans la banque {maBanque.Name}: {maBanque.GetAllAccounts().Count()} comptes ");
     }
 }

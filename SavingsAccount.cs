@@ -1,6 +1,6 @@
 class SavingsAccount : Account
 {
-    public DateTime DateLastWithdraw { get; set; }
+    public DateTime DateLastWithdraw { get; private set; }
     
     public SavingsAccount(double initialBalance,string number,double creditLine,Person owner) : base(number,initialBalance,creditLine,owner)
     {

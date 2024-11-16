@@ -1,3 +1,5 @@
+using System.ComponentModel.DataAnnotations;
+
 class CurrentAccount : Account
 {
     public CurrentAccount(string number, double initialBalance, double creditLine, Person owner)
@@ -7,31 +9,50 @@ class CurrentAccount : Account
     }
     public override void Withdraw(double amount)
     {
-        if (SubtractFromBalance(amount))
+
+        if (amount <= 0)
         {
-            Console.WriteLine($"Retrait de {amount} EUR. Effectué");
+            throw new ArgumentOutOfRangeException(nameof(amount), "Le montant doit être supérieur à 0");
+    
         }
-        else
+        if (!SubtractFromBalance(amount))
         {
-            Console.WriteLine("Fond insuffisant");
+            throw new InsufficientBalanceException("Font insufisant");
         }
+        
+        Console.WriteLine($"Retrait de {amount} effectué");
     }
     public override void Deposit(double amount)
     {
-        if (amount > 0)
+        
+        if (amount <= 0)
         {
-            AddToBalance(amount);
-            Console.WriteLine($"Dépot de {amount} EUR effectué ");
+            throw new ArgumentOutOfRangeException(nameof(amount),"Le montant doit être supérieur à 0");
         }
-        else
-        {
-            Console.WriteLine("Montant non valide");
-        }
+
+        AddToBalance(amount);
+        Console.WriteLine($"Dépot de {amount} EUR effectué");
     }
 
     protected override double CalculInterest()
     {
         double taux = (GetBalance() >= 0) ? 0.03 : 0.0975;
         return GetBalance() * taux;
+    }
+}
+
+[Serializable]
+internal class InsufficientBalanceException : Exception
+{
+    public InsufficientBalanceException()
+    {
+    }
+
+    public InsufficientBalanceException(string? message) : base(message)
+    {
+    }
+
+    public InsufficientBalanceException(string? message, Exception? innerException) : base(message, innerException)
+    {
     }
 }
