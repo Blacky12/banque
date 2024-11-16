@@ -19,9 +19,27 @@ class Program
         IBankAccount account2 = new CurrentAccount("2", 200.0, 1000.0, person1);
         IBankAccount account3 = new CurrentAccount("3", 200.0, 1000.0, person2);
 
-        // Test des fonctionnalités du compte
-        account1.Deposit(50); // Dépôt
-        account1.Withdraw(50); // Retrait
+        // Test des fonctionnalités du compteµ
+        try
+        {
+            account1.Deposit(50); //Dépot
+            account1.Deposit(50);
+            account1.Deposit(-50); // Va prendre l'erreur
+        }
+        catch (Exception ex)
+        {
+          Console.WriteLine($"Erreur: {ex.Message}");
+        }
+        try
+        {
+            account1.Withdraw(50);
+            account1.Withdraw(-50); // Retrait
+        }
+        catch(Exception ex)
+        {
+            Console.WriteLine($"Erreur: {ex.Message}");
+        }
+        
         account1.ApplyInterest(); // Application des intérêts
 
         // Affichage des résultats

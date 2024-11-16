@@ -5,7 +5,10 @@ class CurrentAccount : Account
     public CurrentAccount(string number, double initialBalance, double creditLine, Person owner)
     : base(number, initialBalance, creditLine, owner)
     {
-
+        if (creditLine <= 0)
+        {
+            throw new ArgumentOutOfRangeException(nameof(creditLine),"Credit ne peut être inférieur à 0");
+        }
     }
     public override void Withdraw(double amount)
     {
@@ -20,7 +23,7 @@ class CurrentAccount : Account
             throw new InsufficientBalanceException("Font insufisant");
         }
         
-        Console.WriteLine($"Retrait de {amount} effectué");
+        Console.WriteLine($"Retrait de {amount} EUR effectué");
     }
     public override void Deposit(double amount)
     {

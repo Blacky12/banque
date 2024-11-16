@@ -1,7 +1,7 @@
 class Bank
 {
     Dictionary<string,IBankAccount> Accounts {get;} = new Dictionary<string,IBankAccount>();
-    public string Name{get; set;}
+    public string ?Name{get; set;}
 
     public void AddAccount(IBankAccount account)
     {
