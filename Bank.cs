@@ -6,6 +6,10 @@ class Bank
     public void AddAccount(IBankAccount account)
     {
         Accounts.Add(account.Number, account);
+        if (account is CurrentAccount currentAccount)
+        {
+            currentAccount.NegativeBalanceEvent += HandleNegativeBalance;
+        }
     }
     public void DeleteAccount(string number)
     {
@@ -15,6 +19,11 @@ class Bank
     public void ShowAccount(CurrentAccount account)
     {
         Console.WriteLine($"Le compte courant de {account.Owner} à un solde de {account.GetBalance()} EUR");
+    }
+
+    public void HandleNegativeBalance(Account account)
+    {
+        Console.WriteLine($"Le compte {account.Number} est passée en négatif");
     }
     public double GetTotalBalance(Person person)
     {

@@ -15,7 +15,7 @@ class SavingsAccount : Account
        }
        else
        {
-        Console.WriteLine("Font insuffisant");
+        Console.WriteLine("Fond insuffisant");
        }
     }
     public override void Deposit(double amount)

@@ -6,7 +6,7 @@ abstract class Account : IBankAccount
     public double CreditLine { get; private set; }
     public Person Owner { get; private set; }
 
-    public Account(string number,double initialBalance, double creditLine,Person owner)
+    public Account(string number, double initialBalance, double creditLine, Person owner)
     {
         Number = number;
         Balance = initialBalance;
@@ -16,6 +16,9 @@ abstract class Account : IBankAccount
 
     double IAccount.Balance => Balance;
 
+    public delegate void NegativeBalanceDelegate(Account account);
+    public event NegativeBalanceDelegate NegativeBalanceEvent;
+
     protected void AddToBalance(double initialBalance)
     {
         Balance += initialBalance;
@@ -23,12 +26,19 @@ abstract class Account : IBankAccount
 
     protected bool SubtractFromBalance(double amount)
     {
-        if (amount <= Balance)
+        if (Balance - amount >= -CreditLine)
         {
             Balance -= amount;
+
+            if (Balance < 0)
+            {
+                NegativeBalanceEvent?.Invoke(this);
+            }
             return true;
         }
         return false;
+
+
     }
 
     public double GetBalance()
